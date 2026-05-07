@@ -293,6 +293,19 @@
       font-weight: 800;
     }
 
+    .official-note {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .official-note a {
+      color: var(--teal);
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .notes-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -482,14 +495,19 @@
 
     <section class="notes-panel" aria-labelledby="additional-notes-title">
       <h2 id="additional-notes-title" class="notes-title">Additional Account Notes</h2>
+      <p class="official-note">
+        Official reference: the U.S. Department of State FAQ defines a social media "handle" or "identifier" as
+        "any name used by the individual on social media platforms." Source:
+        <a href="https://travel.state.gov/content/dam/visas/Enhanced%20Vetting/CA%20-%20FAQs%20on%20Social%20Media%20Collection%20-%206-4-2019%20%28v.2%29.pdf?inline=1" target="_blank" rel="noopener">U.S. Department of State FAQ on Social Media Identifiers in the DS-160 and DS-260</a>.
+      </p>
       <div class="notes-grid">
         <article class="note-block" style="--accent: var(--teal);">
           <h3>WeChat: NorthWSU</h3>
-          <p>Reason not listed on the DS-160 social media section: WeChat is primarily used as a messaging and contact account, and is not conceptually treated here as a social media platform.</p>
+          <p>Reason not listed on the DS-160 social media section: this account is used primarily for messaging and contacts, not as a social media platform identifier under the official definition above.</p>
         </article>
         <article class="note-block" style="--accent: var(--coral);">
           <h3>Xiaohongshu: 42228856822</h3>
-          <p>Reason not listed on the DS-160 social media section: this Xiaohongshu account has never posted content and has never commented on any content.</p>
+          <p>Reason not listed on the DS-160 social media section: this account has never posted content and has never commented on any content.</p>
         </article>
       </div>
     </section>
