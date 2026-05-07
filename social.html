@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Guangbei Yi 的社交媒体主页，包含 Facebook、Instagram、LinkedIn、QQ 空间、微博、X、YouTube 和 GitHub。">
+  <meta name="description" content="Guangbei Yi 的社交媒体主页，包含 Facebook、Instagram、LinkedIn、微博、X、YouTube、GitHub 和补充账号说明。">
   <meta property="og:title" content="Guangbei Yi | Social Links">
   <meta property="og:description" content="All social media links for Guangbei Yi.">
   <meta property="og:type" content="website">
@@ -157,6 +157,16 @@
       outline: none;
     }
 
+    .social-card.inactive {
+      cursor: default;
+    }
+
+    .social-card.inactive:hover {
+      border-color: var(--line);
+      box-shadow: 0 12px 28px rgba(22, 33, 29, 0.06);
+      transform: none;
+    }
+
     .card-head {
       display: flex;
       align-items: flex-start;
@@ -187,6 +197,14 @@
       margin: 10px 0 16px;
       color: var(--muted);
       font-size: 0.96rem;
+      overflow-wrap: anywhere;
+    }
+
+    .status-note {
+      margin: -6px 0 16px;
+      color: var(--coral);
+      font-size: 0.88rem;
+      font-weight: 750;
       overflow-wrap: anywhere;
     }
 
@@ -263,6 +281,41 @@
       font-size: 0.9rem;
     }
 
+    .notes-panel {
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .notes-title {
+      margin: 0 0 14px;
+      font-size: 1.04rem;
+      font-weight: 800;
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .note-block {
+      padding: 0 0 0 14px;
+      border-left: 4px solid var(--accent, var(--teal));
+    }
+
+    .note-block h3 {
+      margin: 0;
+      font-size: 0.98rem;
+      font-weight: 800;
+    }
+
+    .note-block p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
     @media (max-width: 880px) {
       .layout {
         grid-template-columns: 1fr;
@@ -292,6 +345,10 @@
       }
 
       .links-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .notes-grid {
         grid-template-columns: 1fr;
       }
 
@@ -357,7 +414,7 @@
           <span class="open">Open profile <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></span>
         </a>
 
-        <a class="social-card" style="--accent: #12b7f5;" href="https://user.qzone.qq.com/947261692" target="_blank" rel="noopener">
+        <article class="social-card inactive" style="--accent: #12b7f5;">
           <span class="card-head">
             <span>
               <span class="platform">QZone (QQ)</span>
@@ -365,8 +422,9 @@
             </span>
             <span class="badge" aria-hidden="true">QQ</span>
           </span>
-          <span class="open">Open profile <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></span>
-        </a>
+          <span class="status-note">备注：QQ 空间已于 2024 年注销。</span>
+          <span class="open">Inactive profile</span>
+        </article>
 
         <a class="social-card" style="--accent: #e6162d;" href="https://weibo.com/u/2474230701" target="_blank" rel="noopener">
           <span class="card-head">
@@ -390,11 +448,11 @@
           <span class="open">Open profile <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></span>
         </a>
 
-        <a class="social-card" style="--accent: #ff0000;" href="https://www.youtube.com/results?search_query=DAVID%20YI" target="_blank" rel="noopener">
+        <a class="social-card" style="--accent: #ff0000;" href="https://www.youtube.com/@davidyi4591" target="_blank" rel="noopener">
           <span class="card-head">
             <span>
               <span class="platform">YouTube</span>
-              <span class="handle">DAVID YI</span>
+              <span class="handle">@davidyi4591</span>
             </span>
             <span class="badge" aria-hidden="true">Yt</span>
           </span>
@@ -420,6 +478,20 @@
         </div>
         <a id="page-url" class="url" href="#" aria-label="Current page URL"></a>
       </aside>
+    </section>
+
+    <section class="notes-panel" aria-labelledby="additional-notes-title">
+      <h2 id="additional-notes-title" class="notes-title">Additional Account Notes</h2>
+      <div class="notes-grid">
+        <article class="note-block" style="--accent: var(--teal);">
+          <h3>微信：NorthWSU</h3>
+          <p>未列入 DS-160 社交媒体项的原因：微信主要作为通讯和联系人账号使用，不是概念上的社交媒体平台。</p>
+        </article>
+        <article class="note-block" style="--accent: var(--coral);">
+          <h3>小红书：42228856822</h3>
+          <p>未列入 DS-160 社交媒体项的原因：该小红书账号没有发布过内容，也没有评论过内容。</p>
+        </article>
+      </div>
     </section>
 
     <footer class="footer">Guangbei Yi · TPLINK329242</footer>
