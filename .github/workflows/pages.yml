@@ -24,6 +24,10 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
 
+      - name: Add deployment version
+        shell: bash
+        run: printf '%s\n' "$GITHUB_SHA" > deployment-version.txt
+
       - name: Upload static site
         uses: actions/upload-pages-artifact@v5
         with:
@@ -39,5 +43,27 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-        with:
-          timeout: 1200000
+        continue-on-error: true
+
+      - name: Verify deployed version
+        if: ${{ !cancelled() }}
+        timeout-minutes: 12
+        shell: bash
+        env:
+          VERSION_URL: https://tplink329242.github.io/tplink329242/deployment-version.txt
+        run: |
+          for attempt in $(seq 1 120); do
+            deployed_sha="$(curl --fail --silent --show-error --location \
+              --header 'Cache-Control: no-cache' \
+              "${VERSION_URL}?sha=${GITHUB_SHA}&attempt=${attempt}" || true)"
+
+            if [ "$deployed_sha" = "$GITHUB_SHA" ]; then
+              echo "Verified deployment for ${GITHUB_SHA}."
+              exit 0
+            fi
+
+            sleep 5
+          done
+
+          echo "The deployed site did not reach ${GITHUB_SHA} within 10 minutes." >&2
+          exit 1
