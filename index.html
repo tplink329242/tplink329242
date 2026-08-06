@@ -238,6 +238,62 @@
       margin-bottom: 0;
     }
 
+    .publication-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .publication {
+      display: grid;
+      gap: 9px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--teal);
+      border-radius: 8px;
+      background: var(--panel-soft);
+    }
+
+    .publication-authors {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .publication-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 2px;
+    }
+
+    .paper-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 800;
+      transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .paper-link.primary {
+      border-color: rgba(0, 124, 120, 0.28);
+      background: var(--teal);
+      color: #ffffff;
+    }
+
+    .paper-link:hover,
+    .paper-link:focus-visible {
+      border-color: rgba(0, 124, 120, 0.5);
+      box-shadow: 0 8px 20px rgba(23, 33, 29, 0.09);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
     .meta {
       color: var(--muted);
       font-size: 0.92rem;
@@ -448,6 +504,60 @@
             </ul>
           </article>
         </section>
+
+        <section aria-labelledby="publications-title">
+          <h2 id="publications-title">Publications</h2>
+          <div class="publication-list">
+            <article class="publication">
+              <div class="meta">ICSE 2026</div>
+              <h3>Exploring and Improving Real-World Vulnerability Data Generation via Prompting Large Language Models</h3>
+              <p class="publication-authors">Guangbei Yi, Yu Nong, Minzhang Li, and Haipeng Cai</p>
+              <div class="publication-links">
+                <a class="paper-link primary" href="icse26guangbei%20%281%29.pdf" target="_blank" rel="noopener">Read PDF</a>
+                <a class="paper-link" href="https://doi.org/10.1145/3744916.3773176" target="_blank" rel="noopener">Publisher</a>
+              </div>
+            </article>
+
+            <article class="publication">
+              <div class="meta">ACM Transactions on Software Engineering and Methodology · 2026</div>
+              <h3>Assessing and Improving Prompting Large Language Models for Software Vulnerability Analysis</h3>
+              <p class="publication-authors">Yu Nong, Guangbei Yi, Mohammed Aldeen, Long Cheng, Hongxin Hu, and Haipeng Cai</p>
+              <div class="publication-links">
+                <a class="paper-link primary" href="3821416.pdf" target="_blank" rel="noopener">Read PDF</a>
+                <a class="paper-link" href="https://doi.org/10.1145/3821416" target="_blank" rel="noopener">Publisher</a>
+              </div>
+            </article>
+
+            <article class="publication">
+              <div class="meta">Research manuscript · 2026</div>
+              <h3>Accelerating FHE-based PIR via GPU</h3>
+              <p class="publication-authors">Guangbei Yi, Yu-Te Ku, Minzhang Li, Shih-Hao Hung, and Feng-hao Liu</p>
+              <div class="publication-links">
+                <a class="paper-link primary" href="GPU_Accelerated_Single_Server_Private_Information_Retrieval_Based_on_Key_Switching_PIR_Constructions%20%286%29.pdf" target="_blank" rel="noopener">Read PDF</a>
+              </div>
+            </article>
+
+            <article class="publication">
+              <div class="meta">ICSE 2024</div>
+              <h3>VGX: Large-Scale Sample Generation for Boosting Learning-Based Software Vulnerability Analyses</h3>
+              <p class="publication-authors">Yu Nong, Richard Fang, Guangbei Yi, Kunsong Zhao, Xiapu Luo, Feng Chen, and Haipeng Cai</p>
+              <div class="publication-links">
+                <a class="paper-link primary" href="3597503.3639116%20%281%29.pdf" target="_blank" rel="noopener">Read PDF</a>
+                <a class="paper-link" href="https://doi.org/10.1145/3597503.3639116" target="_blank" rel="noopener">Publisher</a>
+              </div>
+            </article>
+
+            <article class="publication">
+              <div class="meta">32nd USENIX Security Symposium · 2023</div>
+              <h3>PolyFuzz: Holistic Greybox Fuzzing of Multi-Language Systems</h3>
+              <p class="publication-authors">Wen Li, Jinyang Ruan, Guangbei Yi, Long Cheng, Xiapu Luo, and Haipeng Cai</p>
+              <div class="publication-links">
+                <a class="paper-link primary" href="usenixsecurity23-li-wen%20%282%29.pdf" target="_blank" rel="noopener">Read PDF</a>
+                <a class="paper-link" href="https://www.usenix.org/conference/usenixsecurity23/presentation/li-wen" target="_blank" rel="noopener">Publisher</a>
+              </div>
+            </article>
+          </div>
+        </section>
       </div>
 
       <div class="side-stack">
@@ -459,7 +569,7 @@
               <span>Expected Ph.D. completion</span>
             </li>
             <li class="metric">
-              <strong>2</strong>
+              <strong>5</strong>
               <span>Security and software engineering papers</span>
             </li>
             <li class="metric">
